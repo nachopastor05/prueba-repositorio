@@ -1,0 +1,245 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	min-width: 320px;
+}
+
+header{
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	padding: 20px;
+}
+
+h1{
+	color: #ef4135;
+	font-weight: 400;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 0 10px;
+}
+
+h1 span{
+	color: #0050a4;
+}
+
+.biografia{
+	color: #333;
+	text-transform: lowercase;
+}
+
+.biografia::after{
+	content: " +";
+}
+
+nav ul{
+	list-style: none;
+	display: flex;
+}
+
+nav li{
+	flex-grow: 1;
+}
+
+nav a{
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 8em;
+	text-transform: lowercase;
+	color: #fff;
+	display: block;
+	height: 100vh;
+	background: url("../img/blanco.jpg") no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+
+nav a span{
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+}
+
+nav li:first-child a{
+	color: #0050a4;
+	background-image: url("../img/azul.jpg");
+}
+
+nav li:last-child a{
+	color: #ef4135;
+	background-image: url("../img/rojo.jpg");
+}
+
+/*PÁGINAS INTERNAS*/
+
+.blanco{
+	background-image: linear-gradient(to top,#999,#eee);
+	min-height: 100vh;
+}
+
+.azul{
+	background-image: linear-gradient(to top,#003670,#0050a4);
+}
+
+.rojo{
+	background-image: linear-gradient(to top,#bd332a,#ff4135);
+}
+
+.cabecera-interna{
+	position: static;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cabecera-interna nav{
+	width: 400px;
+}
+
+.cabecera-interna nav li a{
+	display: inline;
+	color: #333;
+	font-size: 1em;
+	background-image: none;
+}
+
+.azul .cabecera-interna nav a, .rojo .cabecera-interna nav a{
+	color: #eee;
+}
+
+h1 a{
+	text-decoration: none;
+	color: #ef4135;
+}
+
+.cabecera-interna li:last-child a::after{
+	content: " +";
+}
+
+.contenedor{
+	width: 500px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+
+.contenedor h2{
+	font-weight: 500;
+	color: white;
+	font-size: 12em;
+	position: relative;
+	top: 100px;
+	left: -100px;
+}
+
+.azul h2{
+	color: #003670;
+}
+
+.rojo h2{
+	color: #bd332a;
+}
+
+.contenedor p{
+	color: #333;
+	position: relative;
+	z-index: 1;
+	margin-top: 10px;
+}
+
+.azul p, .rojo p{
+	color: #eee;
+}
+
+.contenedor img{
+	display: block;
+	border: 1px solid #333;
+	background-color: white;
+	padding: 10px;
+	width: calc(100% - 22px);
+	margin-top: 10px;
+}
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 1200px){
+	nav a{
+		font-size: 6em;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.cabecera-interna{
+		display: block;
+	}
+
+	.cabecera-interna h1{
+		display: inline-block;
+	}
+	
+	.cabecera-interna nav{
+		margin-top: 20px;
+	}
+
+	nav ul{
+		display: block;
+	}
+
+	.cabecera-interna nav ul{
+		display: flex;
+	}
+
+	nav a{
+		height: calc(100vh / 3);
+		text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+	}
+
+	.cabecera-interna nav a{
+		text-shadow: none;
+	}
+
+	nav li:first-child a{	
+		background-position: center -60px;
+	}	
+
+	nav li:last-child a{	
+		background-position: center -120px;
+}
+
+@media screen and (max-width: 700px){
+	.cabecera-interna nav{
+		width: 100%;
+	}
+
+	.contenedor{
+		width: 85%;
+	}
+
+	.contenedor h2{
+		position: static;
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 500px){
+	h1 span{
+		display: block;
+	}
+
+	.biografia{
+		display: none;
+	}
+
+	nav a{
+		font-size: 4em;
+	}
+
+	nav a span{
+		bottom: 20px;
+		right: 20px;
+	}
+}
